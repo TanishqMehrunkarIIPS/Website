@@ -26,49 +26,79 @@
             color:aliceblue;
             width:10vw;
         }
-        #frame
+        .frame
         {
             height:70vh;
             width:70vw;
         }
+        .frame2
+        {
+            height:70vh;
+            width:50vw;
+        }
         @media (max-width:1100px)
         {
-            #frame
+            .frame
             {
                 height:70vh;
                 width:80vw;
             }
+            .frame2
+            {
+                height: 70vh;
+                width:60vw;
+            }
         }
         @media (max-width:990px)
         {
-            #frame
+            .frame
             {
                 height:50vh;
                 width:90vw;
             }
+            .frame2
+            {
+                height: 50vh;
+                width:100vw;
+            }
         }
         @media (max-width:768px)
         {
-            #frame
+            .frame
             {
                 height:40vh;
                 width:90vw;
             }
+            .frame2
+            {
+                height: 40vh;
+                width:100vw;
+            }
         }
         @media (max-width:560px)
         {
-            #frame
+            .frame
             {
                 height:30vh;
                 width:90vw;
             }
+            .frame2
+            {
+                height: 30vh;
+                width:100vw;
+            }
         }
         @media (max-width:400px)
         {
-            #frame
+            .frame
             {
                 height:20vh;
                 width:90vw;
+            }
+            .frame2
+            {
+                height: 20vh;
+                width:100vw;
             }
         }
     </style>
@@ -95,7 +125,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a class="nav-link" href="#assignment">Assignments</a>
+                      <!-- <a class="nav-link" href="#assignment">Assignments</a> -->
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Assignments
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#NAD">NAD</a>
+                            <a class="dropdown-item" href="#data">Data Science</a>
+                        </div>
+                      </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" target="_blank" href="https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg?size=626&ext=jpg">Resume</a>
@@ -135,35 +174,184 @@
             </div>
         </b>
     </div><br>
-    <div id="frame" class="container">
+    <h1><i><u>Numerical Analysis and Design</u></i></h1><br>
+    <div class="container frame">
         <iframe src="https://www.youtube.com/embed/-2Rma5JZ-mg" name="video" target="video" style="width:100%;height:100%;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
         </iframe>
     </div>
-    <br>
     </center>
+    <br>
     <div class="row">
-        <div id="assignment" class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
+        <div id="NAD" class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
             <center>
                 <a class="btn btn-dark" href="https://www.youtube.com/embed/-2Rma5JZ-mg" target="video"><div class="card-title">NAD 1<sup>st</sup> Internal</div></a>
             </center>
         </div>
-        <div id="assignment" class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
             <center>
                 <a class="btn btn-dark" href="https://www.youtube.com/embed/L66vqTxiiKM" target="video"><div class="card-title">NAD 2<sup>nd</sup> Internal [A]</div></a>
             </center>
         </div>
     </div><br>
     <div class="row">
-        <div id="assignment" class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
             <center>
                 <a class="btn btn-dark" href="https://www.youtube.com/embed/SMH-iR1UG1o" target="video"><div class="card-title">NAD 2<sup>nd</sup> Internal [B]</div></a>
             </center>
         </div>
-        <div id="assignment" class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 col-6">
             <center>
                 <a class="btn btn-dark" href="https://www.youtube.com/embed/3qLkSGFQh68" target="video"><div class="card-title">NAD End Sem</div></a>
             </center>
         </div>
     </div>
+    <br>
+    <center>
+        <h1>Data Science Lab Assignment</h1><br>
+        <div class="container frame2">
+            <iframe src="./outputs/1.2.png" name="output" target="output" style="width:100%;height:100%;" title="Output Displayer" frameborder="0">
+            </iframe>
+        </div>
+    </center>
+    <br>
+    <div class="row">
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/1.2.png" target="output"><div class="card-title">Question 1 [2]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/1.5.png" target="output"><div class="card-title">Question 1 [5]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/1.6.png" target="output"><div class="card-title">Question 1 [6]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/2.3.png" target="output"><div class="card-title">Question 2 [3]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/2.4.png" target="output"><div class="card-title">Question 2 [4]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/2.5.png" target="output"><div class="card-title">Question 2 [5]</div></a>
+            </center>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/3.1.png" target="output"><div class="card-title">Question 3 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/3.2.png" target="output"><div class="card-title">Question 3 [2]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/3.3.png" target="output"><div class="card-title">Question 3 [3]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/4.1.png" target="output"><div class="card-title">Question 4 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/4.2.png" target="output"><div class="card-title">Question 4 [2]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/4.3.png" target="output"><div class="card-title">Question 4 [3]</div></a>
+            </center>
+        </div>
+    </div>  
+    <br>
+    <div class="row">
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/4.4.png" target="output"><div class="card-title">Question 4 [4]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/4.5.png" target="output"><div class="card-title">Question 4 [5]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/5.1.png" target="output"><div class="card-title">Question 5 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/6.1.png" target="output"><div class="card-title">Question 6 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/7.1.png" target="output"><div class="card-title">Question 7 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/8.1.png" target="output"><div class="card-title">Question 8 [1]</div></a>
+            </center>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/9.1.png" target="output"><div class="card-title">Question 9 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/9.2.png" target="output"><div class="card-title">Question 9 [2]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/10.1.png" target="output"><div class="card-title">Question 10 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/10.2.png" target="output"><div class="card-title">Question 10 [2]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/11.1.png" target="output"><div class="card-title">Question 11 [1]</div></a>
+            </center>
+        </div>
+        <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+            <center>
+                <a class="btn btn-dark" href="./outputs/11.2.png" target="output"><div class="card-title">Question 11 [2]</div></a>
+            </center>
+        </div>
+    </div>
+    <br>
+    <center>
+        <div class="row">
+            <div class="col-2 col-lg-2 col-sm-2 col-md-2 col-xl-2 col-xxl-2">
+                <a class="btn btn-dark" href="./outputs/12.1.png" target="output"><div class="card-title">Question 12 [1]</div></a>
+            </div>
+        </div>  
+    </center>
 </body>
 </html>
