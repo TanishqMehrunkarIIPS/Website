@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+            #base
+            {
+                width:300px;
+                height:300px;
+                background-color:#52b2bf;
+                position: absolute;
+                top:0;
+                right:0;
+                left:0;
+                bottom:0;
+                margin:auto;
+                border:2px groove black;
+            }
+            .block
+            {
+                background:aliceblue;
+                width:70px;
+                height:70px;
+                position:absolute;
+                border-radius:10px;
+                border:1px groove navy;
+            }
+            .block:hover
+            {
+                box-shadow:3px 3px 3px black;
+            }
+            .left
+            {
+                left:5px;
+            }
+            .middle
+            {
+                left:115px;
+            }
+            .right
+            {
+                right:5px;
+            }
+            .top
+            {
+                top:5px;
+            }
+            .mid
+            {
+                top:115px;
+            }
+            .bottom
+            {
+                bottom:5px;
+            }
+            .x
+            {
+                background-color: #1338be;
+                width:67px;
+                height:10px;
+                position:absolute;
+                top:30px;
+                display: none;
+                left:1px;
+            }
+            .x1
+            {
+                transform:rotate(45deg);
+            }
+            .x2
+            {
+                transform:rotate(-45deg);
+            }
+            .o
+            {
+                width:50px;
+                height:50px;
+                position:absolute;
+                border-radius:50%;
+                border-style: solid;
+                border-width: 5px;
+                border-color: #1338be;
+                top:5px;
+                display: none;
+                left:5px;
+            }
+            #turn
+            {
+                background-color:black;
+                color:white;
+                font-size: larger;
+                font-weight: bolder;
+                width:100px;
+                height:20px;
+            }
+            @media (max-width:300px)
+            {
+                #base
+                {
+                    width:220px;
+                    height:220px;
+                    position: relative;
+                    top:-10vh;
+                }
+                .block
+                {
+                    width:60px;
+                    height:60px;
+                }
+                .middle
+                {
+                    left:79px;
+                }
+                .mid
+                {
+                    top:79px;
+                }
+                h1
+                {
+                    position:relative;
+                    top:-10vw;
+                }
+                .x
+                {
+                    width:55px;
+                    height:7px;
+                    left:2px;
+                    top:26px;
+                }
+                .o
+                {
+                    width:40px;
+                    height:40px;
+                }
+                .block:hover
+                {
+                    box-shadow:2px 2px 2px black;
+                }
+                #turn
+                {
+                    position: relative;
+                    top:-10vh;
+                    background-color:black;
+                    color:white;
+                    font-size: larger;
+                    font-weight: bolder;
+                    width:100px;
+                    height:20px;
+                }
+            }
+            @media (max-width:500px)
+            {
+                #base
+                {
+                    position:relative;
+                    bottom:0;
+                }
+            }
+            @media (min-width:501px)
+            {
+                #turn
+                {
+                    height:25px;
+                    position:relative;
+                    top:10vh;
+                }
+            }
+            @media (min-width:769px)
+            {
+                #turn
+                {
+                    height:25px;
+                    position:relative;
+                    top:11vh;
+                }
+            }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <center>
+        <h1>Tic Tac Toe</h1>
+        <div id="turn"></div>
+        <div id="base">
+            <div class="block left top" id="play1">
+                <div class="x x1" id="x11"></div>
+                <div class="x x2" id="x12"></div>
+                <div class="o" id="o1"></div>
+            </div>
+            <div class="block middle top" id="play2">
+                <div class="x x1" id="x21"></div>
+                <div class="x x2" id="x22"></div>
+                <div class="o" id="o2"></div>
+            </div>
+            <div class="block right top" id="play3">
+                <div class="x x1" id="x31"></div>
+                <div class="x x2" id="x32"></div>
+                <div class="o" id="o3"></div>
+            </div>
+            <div class="block left mid" id="play4">
+                <div class="x x1" id="x41"></div>
+                <div class="x x2" id="x42"></div>
+                <div class="o" id="o4"></div>
+            </div>
+            <div class="block middle mid" id="play5">
+                <div class="x x1" id="x51"></div>
+                <div class="x x2" id="x52"></div>
+                <div class="o" id="o5"></div>
+            </div>
+            <div class="block right mid" id="play6">
+                <div class="x x1" id="x61"></div>
+                <div class="x x2" id="x62"></div>
+                <div class="o" id="o6"></div>
+            </div>
+            <div class="block left bottom" id="play7">
+                <div class="x x1" id="x71"></div>
+                <div class="x x2" id="x72"></div>
+                <div class="o" id="o7"></div>
+            </div>
+            <div class="block middle bottom" id="play8">
+                <div class="x x1" id="x81"></div>
+                <div class="x x2" id="x82"></div>
+                <div class="o" id="o8"></div>
+            </div>
+            <div class="block right bottom" id="play9">
+                <div class="x x1" id="x91"></div>
+                <div class="x x2" id="x92"></div>
+                <div class="o" id="o9"></div>
+            </div>
+        </div>
+    </center>
+</body>
+<script>
+    var turn=0;
+    var count=new Array(9);
+    var occupy=new Array(9);
+    for(var i=0;i<9;i++)
+    {
+        count[i]=0;
+    }
+    var turndiv=document.getElementById("turn");
+    turndiv.innerHTML="X`s Turn";
+    function happened()
+    {
+        turn++;
+        if(turn%2==0)
+        {
+            turndiv.innerHTML="X`s Turn";
+        }
+        else
+        {
+            turndiv.innerHTML="O`s Turn";
+        }
+    }
+    function win()
+    {
+        if((occupy[0]==0 && occupy[1]==0 && occupy[2]==0)||
+        (occupy[3]==0 && occupy[4]==0 && occupy[5]==0)||                            /*0 1 2
+                                                                                                                            3 4 5
+                                                                                                                            6 7 8*/
+        (occupy[6]==0 && occupy[7]==0 && occupy[8]==0)||
+        (occupy[0]==0 && occupy[3]==0 && occupy[6]==0)||
+        (occupy[1]==0 && occupy[4]==0 && occupy[7]==0)||
+        (occupy[2]==0 && occupy[5]==0 && occupy[8]==0)||
+        (occupy[0]==0 && occupy[4]==0 && occupy[8]==0)||
+        (occupy[2]==0 && occupy[4]==0 && occupy[6]==0))
+        {
+            window.alert("O has won!!!!");
+            window.location.reload();
+        }
+        if((occupy[0]==1 && occupy[1]==1 && occupy[2]==1)||
+        (occupy[3]==1 && occupy[4]==1 && occupy[5]==1)||                            /* 0 1 2
+                                                                                                                            3 4 5
+                                                                                                                            6 7 8*/
+        (occupy[6]==1 && occupy[7]==1 && occupy[8]==1)||
+        (occupy[0]==1 && occupy[3]==1 && occupy[6]==1)||
+        (occupy[1]==1 && occupy[4]==1 && occupy[7]==1)||
+        (occupy[2]==1 && occupy[5]==1 && occupy[8]==1)||
+        (occupy[0]==1 && occupy[4]==1 && occupy[8]==1)||
+        (occupy[2]==1 && occupy[4]==1 && occupy[6]==1))
+        {
+            window.alert("X has won!!!!");
+            window.location.reload();
+        }
+        else if(occupy[0]!=null && occupy[1]!=null && occupy[2]!=null
+        && occupy[3]!=null && occupy[4]!=null && occupy[5]!=null
+        && occupy[6]!=null && occupy[7]!=null && occupy[8]!=null)
+        {
+            window.alert("It is a tie!!!");
+            window.location.reload();
+        }
+    }
+    function occupied(a)
+    {
+        if(count[a]==1)
+        {
+            return true;
+        }
+        return false;
+    }
+    document.getElementById("play1").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x11");
+        var y=document.getElementById("x12");
+        var z=document.getElementById("o1");
+        if(occupied(0))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[0]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[0]=0;
+                z.style.display="block";
+            }
+            count[0]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play2").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x21");
+        var y=document.getElementById("x22");
+        var z=document.getElementById("o2");
+        if(occupied(1))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[1]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[1]=0;
+                z.style.display="block";
+            }
+            count[1]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play3").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x31");
+        var y=document.getElementById("x32");
+        var z=document.getElementById("o3");
+        if(occupied(2))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[2]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[2]=0;
+                z.style.display="block";
+            }
+            count[2]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play4").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x41");
+        var y=document.getElementById("x42");
+        var z=document.getElementById("o4");
+        if(occupied(3))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[3]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[3]=0;
+                z.style.display="block";
+            }
+            count[3]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play5").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x51");
+        var y=document.getElementById("x52");
+        var z=document.getElementById("o5");
+        if(occupied(4))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[4]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[4]=0;
+                z.style.display="block";
+            }
+            count[4]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play6").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x61");
+        var y=document.getElementById("x62");
+        var z=document.getElementById("o6");
+        if(occupied(5))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[5]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[5]=0;
+                z.style.display="block";
+            }
+            count[5]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play7").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x71");
+        var y=document.getElementById("x72");
+        var z=document.getElementById("o7");
+        if(occupied(6))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[6]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[6]=0;
+                z.style.display="block";
+            }
+            count[6]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play8").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x81");
+        var y=document.getElementById("x82");
+        var z=document.getElementById("o8");
+        if(occupied(7))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[7]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[7]=0;
+                z.style.display="block";
+            }
+            count[7]=1;
+            happened();
+        }
+        win();
+    });
+    document.getElementById("play9").addEventListener('click',()=>
+    {
+        var x=document.getElementById("x91");
+        var y=document.getElementById("x92");
+        var z=document.getElementById("o9");
+        if(occupied(8))
+        {
+            window.alert("Already occupied stupid,bug baad me dhoondna :)!!!");
+        }
+        else
+        {
+            if(turn%2==0)
+            {
+                occupy[8]=1;
+                x.style.display="block";
+                y.style.display="block";
+            }
+            else
+            {
+                occupy[8]=0;
+                z.style.display="block";
+            }
+            count[8]=1;
+            happened();
+        }
+        win();
+    });
+</script>
+</html>
